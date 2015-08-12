@@ -1,0 +1,41 @@
+<td>
+  {{index}}
+</td>
+<td>
+  <span ng-show="!isEditing">{{product.name}}</span>
+  <form name="nameForm" ng-show="isEditing">
+    <input type="text" ng-model="product.name" name="name" required>
+    <div role="alert">
+      <span class="error" ng-show="nameForm.name.$error.required">
+       Required!
+      </span>
+    </div>
+  </form>
+</td>
+<td>
+  <span ng-show="!isEditing">{{product.sku}}</span>
+  <form name="skuForm" ng-show="isEditing">
+    <input type="text" ng-model="product.sku" name="sku" required>
+    <div role="alert">
+      <span class="error" ng-show="skuForm.sku.$error.required">
+       Required!
+      </span>
+    </div>
+  </form>
+</td>
+<td>
+  <span ng-show="!isEditing">{{product.category}}</span>
+  <form name="categoryForm" ng-show="isEditing">
+    <input type="text" ng-model="product.category" name="category" required>
+    <div role="alert">
+      <span class="error" ng-show="categoryForm.category.$error.required">
+       Required!
+      </span>
+    </div>
+  </form>
+</td>
+<td>
+  <a class="btn btn-default" ng-click="startEdit()" ng-show="!isEditing">Edit</a>
+  <a class="btn btn-primary" ng-click="updateProduct()" ng-show="isEditing">Save</a>
+  <a class="btn btn-default" ng-click="stopEdit()" ng-show="isEditing">Cancel</a>
+</td>
